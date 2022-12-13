@@ -1,6 +1,9 @@
 import moviepy.editor
+from pathlib import Path
 
-video = moviepy.editor.VideoFileClip('video/The_Cranberries_Zombie.mp4')
+video_file = Path('video/Zombie.mp4')
+
+video = moviepy.editor.VideoFileClip(f'{video_file}')
 
 audio = video.audio
-audio.write_audiofile('video/Zombie.mp3')
+audio.write_audiofile(f'video/{video_file.stem}.mp3')
